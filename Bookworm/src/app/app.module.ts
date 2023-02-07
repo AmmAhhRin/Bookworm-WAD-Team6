@@ -23,16 +23,21 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatLabel } from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { FooterComponent } from './modules/books/components/footer/footer.component';
 import { HeaderComponent } from './modules/books/components/header/header.component';
+import { LoginComponent } from './modules/books/components/authentication/login/login.component';
+import { SignupComponent } from './modules/books/components/authentication/signUp/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignupComponent,
+    LoginComponent
   ],
 
 
@@ -56,6 +61,7 @@ import { HeaderComponent } from './modules/books/components/header/header.compon
     MatBadgeModule,
     MatSnackBarModule,
     MatFormFieldModule,
+    MatDialogModule
 
     
     

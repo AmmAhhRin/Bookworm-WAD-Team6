@@ -1,101 +1,178 @@
-<h1>This is the header</h1>
-
-<!-- <mat-toolbar class="bg-sky-900 w-full h-10 mb-6 flex items-center justify-center ">
-    <div class=" flex flex-row mt-3 " >
-      <div class=" flex flex-row mr-20">
-        <mat-icon class="text-base mt-0" [ngStyle]="{'color':'white'}"> local_phone</mat-icon>
-        <p class="text-white text-sm pt-1 font-thin">+855 86 269 039</p>
-      </div>
-      <div class=" flex flex-row mr-20">
-        <mat-icon class="text-sm mt-0" [ngStyle]="{'color':'white'}"> place</mat-icon>      
-        <p class="text-white text-sm py-0.5 font-thin">Kampong Speu, Cambodia</p>
-      </div>
-      <div class=" flex flex-row">
-        <mat-icon class="text-sm mt-0" [ngStyle]="{'color':'white'}">timer</mat-icon>      
-        <p class="text-white text-sm py-0.5 font-thin">Open 24/7</p>
-      </div>
-    </div>
-  </mat-toolbar>
-  
-  <mat-toolbar class=" max-w-7xl mx-auto bg-white mb-20">
-    <a routerLink="home" class="ml-16 font-bold tracking-wide text-3xl mr-20">Bookworm</a>
-    
-    <nav class="mr-80">
-      <ul class="flex flex-row">
-        <li><a href="" class="font-thin text-lg mr-8 hover:font-medium hover:underline hover:text-sky-900">Features</a></li>
-        <li><a href="" class="font-thin text-lg mr-8 hover:font-medium hover:underline hover:text-sky-900">Popular</a></li>
-        <li><a href="" class="font-thin text-lg mr-8 hover:font-medium hover:underline hover:text-sky-900">New Releases</a></li>
-        <li><a href="" class="font-thin text-lg mr-8 hover:font-medium hover:underline hover:text-sky-900">About Us</a></li>
-      </ul>
-    </nav>
-  
-  
-    <div>
-      <button mat-icon-button [mat-menu-trigger-for]="search">
-        <mat-icon>search</mat-icon>
-      </button>
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon
-          [matBadge]="itemsQuantity"
-          [matBadgeHidden]="!itemsQuantity"
-          matBadgeColor="warn"
-        
-          >shopping_cart</mat-icon
-        >
-      </button>
-      <button mat-icon-button [mat-menu-trigger-for]="account" >
-        <mat-icon >account_circle</mat-icon>
-      </button>
-    </div>
-  
-    <mat-menu #search="matMenu">
-  
+<style>
+  .navbar{
+      padding: 0 2vh;
+      align-items: center;
+      display: flex;
+      position: sticky;
       
+  }
+  .navbar .navdetail{
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+  }
+  .navbar .navdetail .form{
+      display: flex;
+  }
+  .navbar .navdetail .form .btn{
+      background-color: #31516D;
+      color: #fff;
+      border-color: #31516D;
+  }
+  .navbar .navdetail .collapse{
+      width: 40%;
+      justify-content: space-between;
+  }
+  .navbar .logo{
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+  }
+  .logo img{
+      height: 4vh;
+     
+  }
+  .iconmanu ul{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 2vh;
+  }
+  .iconmanu ul li{
+      list-style: none;
+      font-size: 2vh;
+      padding-right: 2vh;
+      position: relative;
+      color: #31516D;
+      
+  }
+  a{
+      color: #31516D;
+  }
+  .profile{
+      display: flex;
+      align-items: center;
+  }
+  .profile img{
+      margin-right: 2vh;
+  }
+  .nav-page:hover{
+    font-weight: bolder;
+    text-decoration: underline;
+    color: #1A2B3A;
+  }
+
+
+</style>
+
+<mat-toolbar style="background-color: #1A2B3A; width: 100%; height: 40px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
+  <div style="display: flex; flex-direction: row; margin-top: 0.75rem;">
+    <div style="display: flex; flex-direction: row; margin-right: 5rem;">
+      <mat-icon style="font-size: 1rem; line-height: 1.5rem; margin-top: 0; color: #fff;"> local_phone</mat-icon>
+      <p style="color: #fff; font-size: 0.875rem; line-height: 1.25rem; padding-top: 0.25rem; font-weight: 100;">+855 86 269 039</p>
+    </div>
+    <div style="display: flex; flex-direction: row; margin-right: 5rem;">
+      <mat-icon style="font-size: 1rem; line-height: 1.5rem; margin-top: 0; color: #fff;"> place</mat-icon>      
+      <p style="color: #fff; font-size: 0.875rem; line-height: 1.25rem; padding-top: 0.25rem; font-weight: 100;">Kampong Speu, Cambodia</p>
+    </div>
+    <div style="display: flex; flex-direction: row; margin-right: 5rem;">
+      <mat-icon style="font-size: 1rem; line-height: 1.5rem; margin-top: 0; color: #fff;">timer</mat-icon>      
+      <p style="color: #fff; font-size: 0.875rem; line-height: 1.25rem; padding-top: 0.25rem; font-weight: 100;">Open 24/7</p>
+    </div>
+  </div>
+</mat-toolbar>
+
+<div style="max-width: 80rem; margin-left: auto; margin-right: auto; background-color: #fff; margin-bottom: 5rem; display: flex; flex-direction: row;">
+  <a routerLink="home" style="margin-left: 4rem; font-weight: 700; letter-spacing: 0.025em; margin-right: 5rem; font-size: 1.875rem; line-height: 2.25rem; text-decoration: none;">Bookworm</a>
   
-    </mat-menu>
-    
-  
-  
-    <mat-menu #menu="matMenu">
-      <div class="p-3 divide-y divide-solid">
-        <div class="pb-3 flex justify-between">
-          <span class="mr-16">{{ cart.items.length }} items</span>
-          <a routerLink="cart">View Cart</a>
+  <nav style="margin-right: 20rem;">
+    <ul  style="display: flex; flex-direction: row; list-style-type: none; margin-top: 7px;">
+      <li class="nav-page"><a href=""  style="font-weight: 100; font-size: 1.125rem; line-height: 1.75rem; margin-right: 2rem; text-decoration: none;">Features</a></li>
+      <li class="nav-page"><a href=""  style="font-weight: 100; font-size: 1.125rem; line-height: 1.75rem; margin-right: 2rem; text-decoration: none;" >Popular</a></li>
+      <li class="nav-page"><a href=""  style="font-weight: 100; font-size: 1.125rem; line-height: 1.75rem; margin-right: 2rem; text-decoration: none;" >New Releases</a></li>
+      <li class="nav-page"><a href=""  style="font-weight: 100; font-size: 1.125rem; line-height: 1.75rem; margin-right: 2rem; text-decoration: none;">About Us</a></li>
+    </ul>
+  </nav>
+
+  <div>
+    <button mat-icon-button [mat-menu-trigger-for]="search">
+      <mat-icon>search</mat-icon>
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon
+        matBadgeColor="warn"
+      
+        >shopping_cart</mat-icon
+      >
+    </button>
+    <button mat-icon-button [mat-menu-trigger-for]="account" >
+      <mat-icon >account_circle</mat-icon>
+    </button>
+  </div>
+</div>
+
+
+
+<mat-menu #search="matMenu"></mat-menu>
+
+<mat-menu #menu="matMenu"></mat-menu>
+
+<mat-menu #account="matMenu"></mat-menu>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand logo" href="#">
+      <img src="assets\img\Logo\Icon.png" alt="">
+  </a>
+  <div class="navdetail" [ngSwitch]="getScreenWidth">
+      <div class="iconmanu" >
+      <ul >        
+          <li ><a href="#" class="icon" ><i class="fa-regular fa-circle-user"></i></a></li>
+          <li><a href="#" class="icon"><i class="fa-solid fa-gear"></i></a></li>
+          <li><a href="#" class="icon"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+  </div>
+  <button (click)="togglemanu()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02" [ngSwitch]="getScreenWidth">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
+      <li class="nav-item active" *ngSwitchCase="getScreenWidth <= 990">
+        <div class="profile"> 
+          <img src="" alt="">
+          <h5>Username</h5>
         </div>
-        <div *ngIf="cart.items.length" class="py-3">
-          <div
-            *ngFor="let item of cart.items"
-            class="flex justify-between font-light mb-2"
-          >
-            {{ item.name }} x {{ item.quantity }}
-            <span class="font-bold not-italic">{{ item.price | currency }}</span>
-          </div>
-        </div>
-        <div class="flex justify-between py-3 font-light">
-          Total:
-          <span class="font-bold not-italic">{{
-            getTotal(cart.items) | currency
-          }}</span>
-        </div>
-        <div class="pt-3 flex justify-between">
-          <button
-            (click)="onClearCart()"
-            class="bg-rose-600 text-white rounded-full w-9 h-9"
-          >
-            <mat-icon>remove_shopping_cart</mat-icon>
-          </button>
-          <button
-            routerLink="cart"
-            class="bg-green-600 text-white rounded-full w-9 h-9"
-          >
-            <mat-icon>shopping_cart_checkout</mat-icon>
-          </button>
-        </div>
-      </div>
-    </mat-menu>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Featured <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Popular</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">New</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item" *ngSwitchCase="getScreenWidth <= 990">
+        <a class="nav-link" href="#">Setting</a>
+      </li>
+      <li class="nav-item" *ngSwitchCase="getScreenWidth <= 990">
+        <a class="nav-link" href="#">Cart</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 form">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+  </div>
   
-    <mat-menu #account="matMenu">
   
-    </mat-menu>
-  </mat-toolbar>
-   -->
+</nav> -->
+
