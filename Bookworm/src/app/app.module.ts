@@ -30,6 +30,7 @@ import { FooterComponent } from './modules/books/components/footer/footer.compon
 import { HeaderComponent } from './modules/books/components/header/header.component';
 import { LoginComponent } from './modules/books/components/authentication/login/login.component';
 import { SignupComponent } from './modules/books/components/authentication/signUp/signup.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SignupComponent } from './modules/books/components/authentication/signU
     FooterComponent,
     HeaderComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    
   ],
 
 
@@ -61,7 +63,8 @@ import { SignupComponent } from './modules/books/components/authentication/signU
     MatBadgeModule,
     MatSnackBarModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    FontAwesomeModule
 
     
     

@@ -8,12 +8,15 @@ import {
 } from '@angular/forms';
 import { SearchParams } from '../../../models/search-params.interface';
 import { SEARCH_CATEGORIES } from '../constants/search-categories.const';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-books-search',
   templateUrl: './books-search.component.html',
   styleUrls: ['./books-search.component.scss'],
 })
 export class BooksSearchComponent {
+  faSearch = faSearch;
   protected formGroup: FormGroup;
   protected searchCategories: string[] = SEARCH_CATEGORIES;
 

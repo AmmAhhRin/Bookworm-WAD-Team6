@@ -12,7 +12,13 @@ export class BookCardContentComponent {
   @Output() detailButtonClick: EventEmitter<unknown> =
     new EventEmitter<unknown>();
 
+  @Output() cartButtonClick: EventEmitter<unknown> =
+    new EventEmitter<unknown>();  
+
   protected onDetailButtonClick(): void {
     this.detailButtonClick.emit();
+  }
+  protected onCartButtonClick(): void {
+    this.cartButtonClick.emit();
   }
 }

@@ -3,19 +3,25 @@
     (searchButtonClick)="getSearchParams($event)"
   ></app-books-search>
 
-  <div class="container" *ngIf="booksCollection && searchParams">
+  <div class="container" *ngIf="booksCollection && searchParams" style="max-width: 74rem;">
     <div *ngIf="!booksCollection.items; else collectionNotEmpty">
       Your search did not return any results
     </div>
+    
     <ng-template #collectionNotEmpty>
-      <h4>Search results for "{{ searchParams.searchTerm }}"</h4>
-      Showing {{ searchParams.startIndex + 1 }} -
-      {{ searchParams.startIndex + paginationStep }} results
+      <h4 style="margin-top: 2px !important; margin-left: 17px; font-size: 13px; color: blue;">Search results for "{{ searchParams.searchTerm }}"</h4>
+      <div style="margin-top: 50px;"></div>
+
+      <hr style="margin-top: 0%; margin-bottom: 2px;">
+      Showing {{ searchParams.startIndex + 1 }} - {{ searchParams.startIndex + paginationStep }} results
+      
+      
 
       <div class="cards-grid mt-3">
         <app-book-card
           *ngFor="let item of booksCollection.items"
           [volume]="item"
+          class="eachCard"
         ></app-book-card>
       </div>
 
@@ -47,3 +53,10 @@
   </div>
 </ng-container>
 <app-loader></app-loader>
+
+<style>
+  .cards-grid .eachCard{
+    padding-bottom: 0% !important;
+  }
+</style>
+

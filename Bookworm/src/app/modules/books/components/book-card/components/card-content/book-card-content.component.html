@@ -1,23 +1,38 @@
 <ng-container *ngIf="volumeInfo">
-  <h6 class="h-40px my-2">
+  <h6 class="h-40px my-2" style="text-align: center; height: 40px; margin-bottom: 10px !important;">
     {{ volumeInfo.title | truncate: 45 }}
   </h6>
 
-  <div class="h-56px custom-scrollbar">
-    <app-book-list-items [items]="volumeInfo.categories">
-      Categories:
-    </app-book-list-items>
+  <div class="h-56px custom-scrollbar" style="margin-bottom: 10px; font-size: 12px;">
+    <p style="margin-bottom: 2px !important; text-align: center;">Categories:</p>
+    <app-book-list-items [items]="volumeInfo.categories" style="text-align: center;"></app-book-list-items>
   </div>
-  <div class="h-56px custom-scrollbar">
-    <app-book-list-items [items]="volumeInfo.authors">
-      Author(s):
-    </app-book-list-items>
+  <div class="h-56px custom-scrollbar" style="margin-bottom: 5px; font-size: 12px;">
+    <p style="margin-bottom: 2px !important; text-align: center;">Author(s):</p>
+    <app-book-list-items [items]="volumeInfo.authors" style="text-align: center;"></app-book-list-items>
   </div>
-  <hr class="mb-1" />
-  <div class="h-40px item-centered c-pointer" (click)="onDetailButtonClick()">
+  <hr style="margin: .05rem 0 !important;" />
+  <div class="h-20px item-centered c-pointer" (click)="onDetailButtonClick()" style="height: 30px !important ;">
+      
     Book Detail
-  </div><hr class="mb-1" />
-  <div class="h-40px item-centered c-pointer">  <!--(click)="onDetailButtonClick()"-->
-    Add to Cart
+    <span style="margin-left: 15px;">
+      <i style="font-size: 20px;" class="bi bi-bookmark-plus-fill"></i>
+    </span>
   </div>
+    
+  <hr style="margin: .05rem 0 !important;" />
+  <!-- <div style="width: 1px; height: 30px; background-color: #ced4da; margin-bottom: 0%;"></div> -->
+  <div class="h-20px item-centered c-pointer" style="height: 30px !important; padding-bottom: 0%;" >  <!--(click)="onCartButtonClick()"-->
+    Add to Cart
+    <span style="margin-left: 15px;">
+      <i style="font-size: 20px;" class="bi bi-cart-plus-fill"></i>
+
+
+    </span>
+  </div>
+
 </ng-container>
+
+<style>
+  
+</style>
