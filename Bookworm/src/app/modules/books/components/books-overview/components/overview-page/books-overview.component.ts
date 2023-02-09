@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoaderService } from '../../../../../../shared/services/loader.service';
 import { ErrorService } from '../../../../../../shared/services/error.service';
 import { BooksService } from '../../../../services/books.service';
@@ -11,7 +11,7 @@ import { SearchParams } from 'src/app/modules/books/models/search-params.interfa
   templateUrl: './books-overview.component.html',
   styleUrls: ['./books-overview.component.scss'],
 })
-export class BooksOverviewComponent {
+export class BooksOverviewComponent implements OnInit{
   protected booksCollection: CollectionResultModel<Volume[]> | null = null;
   protected searchParams: SearchParams | null = null;
   protected paginationStep = 30;
@@ -28,6 +28,19 @@ export class BooksOverviewComponent {
   And that is reason, why I made pagination system in this way. Stack Over Flow discussion about this issue:
   https://stackoverflow.com/questions/7266838/google-books-api-returns-json-with-a-seemingly-wrong-totalitem-value */
 
+  ngOnInit(): void {
+    console.log("working");
+    this.getSearchParams({
+      searchTerm: 'a-z',
+      category: 'Computers',
+      orderBy: 'relevance',
+      startIndex: 0
+    });
+    // this.loadBooksCollection();
+    
+
+  }
+
   protected getSearchParams(data: SearchParams | null): void {
     if (!data) {
       return;
@@ -35,6 +48,7 @@ export class BooksOverviewComponent {
     this.searchParams = data;
     this.searchParams.startIndex = 0;
     this.loadBooksCollection();
+    console.log(data);
   }
 
   protected onPreviousPageClick(): void {

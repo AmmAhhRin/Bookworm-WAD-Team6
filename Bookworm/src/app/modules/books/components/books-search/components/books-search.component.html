@@ -5,13 +5,10 @@
         <div class="searchBar">
           <!-- <label class="me-1">Search <span class="danger"> *</span></label> -->
           <input
-            formControlName="searchTerm"
+            formControlName="searchTerm" 
             type="text"
-            [ngClass]="{
-              'is-invalid':
-                searchTerm.invalid && (searchTerm.dirty || searchTerm.touched)
-            }"
-            class="form-control"
+            
+            class="form-control" 
             placeholder="Search for books by name / author / keyword..."
           />
           <!-- <span></span> -->
