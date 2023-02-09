@@ -36,10 +36,10 @@
       </app-book-list-items>
     </div>
 
-    <div class="mb-2">
+    <!-- <div class="mb-2">
       Language:
       <span class="text-gray ms-1">{{ volume.volumeInfo.language }}</span>
-    </div>
+    </div> -->
 
     <div class="mb-2">
       Publisher:
@@ -67,9 +67,13 @@
         (click)="onExternalLinkOpen(volume.volumeInfo.infoLink)"
         class="btn btn-sm btn-secondary px-4 py-2 mb-2 me-0 me-2"
       >
-        Get info
+        Get Information
       </button>
-      <button
+        
+      <button class="btn btn-sm btn-secondary px-4 py-2 mb-2 me-0 me-2">
+        Add to Cart
+      </button>
+      <!-- <button
         class="btn btn-sm btn-primary px-4 py-2 mb-2"
         *ngIf="
           volume.saleInfo.saleability === forSaleIdentifier &&
@@ -78,7 +82,7 @@
         (click)="onExternalLinkOpen(volume.saleInfo.buyLink)"
       >
         Order
-      </button>
+      </button> -->
     </div>
   </div>
 </div>
